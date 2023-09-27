@@ -1,8 +1,5 @@
 const VideoCard = ({ info }) => {
 	if (!info) return;
-
-	console.log(info);
-
 	const { snippet, statistics } = info;
 	const { title, channelTitle, thumbnails } = snippet;
 
@@ -16,6 +13,14 @@ const VideoCard = ({ info }) => {
 					{new Intl.NumberFormat("en-IN").format(statistics.viewCount)} views
 				</li>
 			</ul>
+		</div>
+	);
+};
+
+export const AdVideoCard = ({ info }) => {
+	return (
+		<div className="p-1 m-1 border border-red-500">
+			<VideoCard info={info} />
 		</div>
 	);
 };
